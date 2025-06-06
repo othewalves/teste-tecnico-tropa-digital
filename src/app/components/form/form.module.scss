@@ -1,0 +1,26 @@
+@use "@/app/styles/_mixins.scss" as *;
+@use "@/app/styles/_variables.scss" as *;
+
+.form {
+  @include center;
+
+  flex-direction: column;
+
+  .title {
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: $primary_500;
+    @include mobile {
+      font-size: 1.375rem;
+    }
+  }
+
+  .subtitle {
+    font-weight: 400;
+    color: $blue_500;
+    font-size: 1rem;
+    @include mobile {
+      font-size: 0.813rem;
+    }
+  }
+}
