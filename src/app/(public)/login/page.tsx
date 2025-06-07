@@ -11,6 +11,8 @@ const Login = () => {
                 <Image
                     src={Hero}
                     alt='Tropa digital'
+                    className={styles.heroImg}
+
                 />
             </div>
         </section>
