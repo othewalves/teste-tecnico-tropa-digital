@@ -1,0 +1,13 @@
+@use "@/app/styles/_mixins.scss" as *;
+@use "@/app/styles/_variables.scss" as *;
+
+.container {
+  width: 18.75rem;
+  height: 2.5rem;
+  border-radius: 6.25rem;
+  padding: 0.625rem 1.563rem;
+  background-color: $primary_500;
+  color: $white_500;
+  font-weight: 500;
+  font-size: 0.813rem;
+}
