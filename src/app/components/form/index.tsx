@@ -3,7 +3,7 @@ import { useContext } from 'react';
 
 import Image from 'next/image';
 import Logo from '../../../../public/logo.svg';
-import * as styles from './form.module.scss';
+import styles from './form.module.scss';
 
 import Input from '../input';
 import Button from '../button';
@@ -14,9 +14,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { loginForm, loginSchema } from './form.validator';
 
 import { UserContext } from '@/app/hooks/UserContext';
-
-
-
 
 const Form = () => {
 

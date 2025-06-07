@@ -1,6 +1,6 @@
 'use client'
 import { InputHTMLAttributes, useState } from "react";
-import * as styles from './input.module.scss';
+import styles from './input.module.scss';
 import EyeOpen from '../../../../public/eye-on.svg'
 import EyeOff from '../../../../public/eye-off.svg'
 import Image from "next/image";

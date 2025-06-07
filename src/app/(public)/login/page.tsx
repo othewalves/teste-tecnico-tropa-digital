@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import * as styles from './login.module.scss';
+import styles from './login.module.scss';
 import Hero from '../../../../public/hero.svg';
 import Form from '@/app/components/form';
 
