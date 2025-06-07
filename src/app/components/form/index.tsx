@@ -43,7 +43,7 @@ const Form = () => {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit(handleLogin)}>
-            <div>
+            <div className={styles.logo}>
                 <Image
                     src={Logo}
                     alt='Tropa digital'
