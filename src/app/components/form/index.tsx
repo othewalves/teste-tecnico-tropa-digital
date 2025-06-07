@@ -6,9 +6,13 @@ import * as styles from './form.module.scss';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginForm, loginSchema } from './form.validator';
+import { useContext } from 'react';
+import { UserContext } from '@/app/hooks/UserContext';
 
 
 const Form = () => {
+
+    const { login } = useContext(UserContext);
 
     const {
         register,
@@ -22,8 +26,10 @@ const Form = () => {
         }
     });
 
+
     const handleLogin = (form: loginForm) => {
-        alert('LOGOU', form.email)
+        login(form);
+
     }
 
 

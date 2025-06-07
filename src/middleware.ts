@@ -2,7 +2,6 @@ import { NextRequest, NextResponse, type MiddlewareConfig } from 'next/server';
 
 const publicRoutes = [
     { path: '/login', whenAuthenticated: 'redirect' },
-    { path: '/dashboard', whenAuthenticated: 'next' },
 ] as const;
 
 const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = '/login'
@@ -11,7 +10,7 @@ export function middleware(request: NextRequest) {
 
     const pathname = request.nextUrl.pathname;
     const publicRoute = publicRoutes.find((route) => route.path === pathname);
-    const authToken = request.cookies.get('@tropa-digital:token');
+    const authToken = request.cookies.get('tropa-digital-token');
 
     if (!authToken && publicRoute) {
         return NextResponse.next()
