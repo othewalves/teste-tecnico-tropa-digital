@@ -6,12 +6,18 @@
   flex-direction: column;
   max-width: 300px;
 
-  .form-header {
-    margin: 2.125rem 0;
+  .formHeader {
+    margin: 2.188rem 0;
     @include mobile {
-      margin: 1.5rem 0;
+      margin: 1.25rem 0;
       text-align: center;
     }
+  }
+
+  .formContent {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   @include mobile {
