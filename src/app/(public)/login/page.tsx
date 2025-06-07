@@ -12,6 +12,8 @@ const Login = () => {
                     src={Hero}
                     alt='Tropa digital'
                     className={styles.heroImg}
+                    priority
+                    quality={1000}
 
                 />
             </div>

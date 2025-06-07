@@ -45,7 +45,7 @@ const Form = () => {
                     src={Logo}
                     alt='Tropa digital'
                     width={161}
-                    height={25}
+                    height={26}
                 />
             </div>
             <div className={styles.formHeader}>

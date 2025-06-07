@@ -2,10 +2,12 @@
 @use "@/app/styles/_variables.scss" as *;
 
 .form {
-  @include center;
+  // @include center;
+  display: flex;
   flex-direction: column;
-  padding: 1.25rem;
+  padding: 2.5rem 1.25rem;
   width: 100%;
+  height: 100%;
 
   @include mobile {
     width: 90%;
@@ -19,7 +21,7 @@
   }
 
   .formHeader {
-    margin: 2.188rem 0;
+    margin: 1.875rem 0 2.188rem;
     width: 100%;
 
     @include tablet {
@@ -34,14 +36,14 @@
     flex-direction: column;
   }
 
-  @include mobile {
-    width: 100%;
-  }
-
   .title {
     font-weight: 700;
     color: $primary_500;
-    font-size: 1.375rem;
+    font-size: 1.625rem;
+
+    @include tablet {
+      font-size: 1.375rem;
+    }
   }
 
   .subtitle {
