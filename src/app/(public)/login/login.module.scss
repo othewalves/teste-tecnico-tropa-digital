@@ -10,9 +10,8 @@
 
   .content {
     @include center;
-    flex-direction: column;
-    // gap: 1.5rem;
-    width: 25rem;
+    min-width: 25rem;
+    max-width: 756.5px;
     background-color: $white_400;
 
     padding: 0.625rem;

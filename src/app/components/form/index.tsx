@@ -1,13 +1,21 @@
 'use client'
-import Button from '../button';
-import Input from '../input';
+import { useContext } from 'react';
+
+import Image from 'next/image';
+import Logo from '../../../../public/logo.svg';
 import * as styles from './form.module.scss';
+
+import Input from '../input';
+import Button from '../button';
+
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginForm, loginSchema } from './form.validator';
-import { useContext } from 'react';
+
 import { UserContext } from '@/app/hooks/UserContext';
+
+
 
 
 const Form = () => {
@@ -35,6 +43,14 @@ const Form = () => {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit(handleLogin)}>
+            <div>
+                <Image
+                    src={Logo}
+                    alt='Tropa digital'
+                    width={161}
+                    height={25}
+                />
+            </div>
             <div className={styles.formHeader}>
                 <h1 className={styles.title}>Bem-vindo de volta</h1>
                 <span className={styles.subtitle}>Entre com sua conta para acessar o painel.</span>
