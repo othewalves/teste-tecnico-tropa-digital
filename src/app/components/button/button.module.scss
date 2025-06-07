@@ -13,4 +13,8 @@
 
   cursor: pointer;
   background-color: $primary_500;
+
+  @include mobile {
+    width: 100%;
+  }
 }
