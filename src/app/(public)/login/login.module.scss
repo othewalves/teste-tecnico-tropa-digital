@@ -20,7 +20,7 @@
 
     box-shadow: 0px 100px 200px 0px #00000040;
 
-    @include mobile {
+    @include tablet {
       .heroImg {
         display: none;
       }

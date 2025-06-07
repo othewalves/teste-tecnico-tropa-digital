@@ -7,15 +7,22 @@
   padding: 1.25rem;
   width: 100%;
 
+  @include mobile {
+    width: 90%;
+  }
+
   .logo {
     width: 100%;
+    @include tablet {
+      @include center;
+    }
   }
 
   .formHeader {
     margin: 2.188rem 0;
     width: 100%;
 
-    @include mobile {
+    @include tablet {
       margin: 1.25rem 0;
       text-align: center;
     }
