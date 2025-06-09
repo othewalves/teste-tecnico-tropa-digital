@@ -2,6 +2,11 @@
 @use "@/app/styles/_variables.scss" as *;
 
 .container {
+  // @include tablet {
+  //   display: none;
+  //   background-color: $primary_500;
+  // }
+
   width: 210px;
   height: 100vh;
   padding: 30px 0;
@@ -12,51 +17,4 @@
 
   background-color: $white_500;
   border-right: 1px solid #0000001a;
-
-  nav {
-    width: 100%;
-    padding: 15px;
-
-    margin-top: 30px;
-
-    .link {
-      display: flex;
-      padding: 10px;
-
-      border-radius: 5px;
-
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
-      background-color: $primary_500;
-      color: $white_500;
-    }
-    .inactive {
-      color: $neutro_500;
-      background-color: $white_500;
-    }
-  }
-
-  .menuTitle {
-    padding-left: 10px;
-    font-weight: 800;
-    font-size: 9px;
-    color: $gray_200;
-    text-transform: uppercase;
-  }
-
-  ul {
-    width: 100%;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    li {
-      width: 100%;
-    }
-  }
-}
-
-.active {
 }

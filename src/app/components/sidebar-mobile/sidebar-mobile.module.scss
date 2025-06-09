@@ -1,0 +1,14 @@
+// SidebarMobile.module.scss
+.menuButton {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    padding: 1rem;
+    cursor: pointer;
+    height: 20px;
+  }
+}

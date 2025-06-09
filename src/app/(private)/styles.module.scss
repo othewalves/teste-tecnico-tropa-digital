@@ -1,0 +1,47 @@
+@use "@/app/styles/_mixins.scss" as *;
+@use "@/app/styles/_variables.scss" as *;
+
+.container {
+  display: flex;
+  position: relative;
+}
+
+.sidebarDesktop {
+  display: block;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.sidebarMobile {
+  display: none;
+
+  @include tablet {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 210px;
+    height: 100%;
+    z-index: 10;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.overlay {
+  @include tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+  }
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+}

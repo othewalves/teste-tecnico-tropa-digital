@@ -5,8 +5,8 @@
 
 import DashboardIcon from '../icons/DashboardIcon';
 import EventsIcon from '../icons/EventsIcon';
-import TeamIcon from '../icons/DashboardIcon';
-import SubscriberIcon from '../icons/DashboardIcon';
+import TeamsIcon from '../icons/TeamsIcon';
+import SubscriberIcon from '../icons/SubscriberIcon';
 
 export const SidebarItemsMocks = [
     {
@@ -22,7 +22,7 @@ export const SidebarItemsMocks = [
     {
         path: '/teams',
         title: 'Equipes',
-        icon: <TeamIcon />
+        icon: <TeamsIcon />
     },
     {
         path: '/subscriber',
