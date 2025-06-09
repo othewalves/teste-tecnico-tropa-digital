@@ -1,0 +1,11 @@
+@use "@/app/styles/_mixins.scss" as *;
+@use "@/app/styles/_variables.scss" as *;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $white_700;
+
+  display: flex;
+  align-items: flex-start;
+}
