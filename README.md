@@ -42,9 +42,14 @@ Este é um projeto desenvolvido como parte de um teste técnico, utilizando **Ne
    git clone https://github.com/othewalves/teste-tecnico-tropa-digital
    ```
 2. Execute o comando para instalar as dependências:
-   `npm i`
+
+   ```
+   npm i
+   ```
 
 3. Executar o comando
-   `npm run dev`
+   ```
+   npm run dev
+   ```
 
 🌐 Projeto disponível em: https://teste-tecnico-tropa-digital.vercel.app/login
