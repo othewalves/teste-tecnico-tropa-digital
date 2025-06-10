@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import styles from './table.module.scss';
 import { useState, useMemo } from 'react';
+import Submenu from '../submenu';
 
 interface Event {
     id: string;
@@ -66,6 +67,8 @@ const ITEMS_PER_PAGE = 2;
 
 const Table = ({ searchTerm }: TableProps) => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [SettingMenuId, setSettingMenuId] = useState('');
+
 
     const filteredEvents = useMemo(() => {
         if (!searchTerm) {
@@ -91,6 +94,11 @@ const Table = ({ searchTerm }: TableProps) => {
             setCurrentPage(page);
         }
     };
+
+    const handleShowSubmenu = (id: string) => {
+        if (SettingMenuId === id) return setSettingMenuId('')
+        if (SettingMenuId !== id) return setSettingMenuId(id)
+    }
 
     useState(() => {
         setCurrentPage(1);
@@ -118,9 +126,12 @@ const Table = ({ searchTerm }: TableProps) => {
                                 <td>
                                     <div className={styles.flexRow}>
                                         <span>{item.date}</span>
-                                        <button className={styles.button}>
+                                        <button className={styles.button} onClick={() => handleShowSubmenu(item.id)}>
                                             <Image src={'/setting.svg'} alt='Configurações' width={4} height={10} />
                                         </button>
+                                        {
+                                            SettingMenuId === item.id && <Submenu />
+                                        }
                                     </div>
                                 </td>
                             </tr>
