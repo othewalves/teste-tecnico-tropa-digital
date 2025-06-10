@@ -1,48 +1,47 @@
- table {
-      width: 100%;
-      table-layout: fixed;
-      display: table;
-      border-spacing: 0px;
-    }
-    thead tr {
-      font-weight: 500;
-      font-size: 13px;
-      color: $primary_400;
-    }
+table {
+  width: 100%;
+  table-layout: fixed;
+  display: table;
+  border-spacing: 0px;
+}
+thead tr {
+  font-weight: 500;
+  font-size: 13px;
+  color: $primary_400;
+}
 
-    tbody tr {
-      font-weight: 400;
-      font-size: 12px;
-      color: $blue_300;
-    }
+tbody tr {
+  font-weight: 400;
+  font-size: 12px;
+  color: $blue_300;
+}
 
-    td {
-      padding: 10px 0;
-      border-bottom: 1px solid $primary_400;
-    }
-    .celStatus {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 9px;
-    }
+td {
+  padding: 10px 0;
+  border-bottom: 1px solid $primary_400;
+}
+.celStatus {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+}
 
-    .celDate {
-      cursor: pointer;
-      background-color: $white_500;
-    }
+.celDate {
+  cursor: pointer;
+  background-color: $white_500;
+}
 
-    .flexRow {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
+.flexRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
 
-    .status {
-      width: 9px;
-      height: 9px;
-      border-radius: 100%;
-      background-color: $success_500;
-    }
-  }
+.status {
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
+  background-color: $success_500;
+}
