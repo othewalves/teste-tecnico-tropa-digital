@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import styles from './table.module.scss';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Submenu from '../submenu';
 
 interface Event {
@@ -100,7 +100,7 @@ const Table = ({ searchTerm }: TableProps) => {
         if (SettingMenuId !== id) return setSettingMenuId(id)
     }
 
-    useState(() => {
+    useEffect(() => {
         setCurrentPage(1);
     }, [searchTerm]);
 
