@@ -6,30 +6,26 @@ interface WindowDimensions {
 }
 
 function getWindowDimensions(): WindowDimensions {
-    // if (typeof window === 'undefined') {
-    //     return {
-    //         width: undefined,
-    //         height: undefined,
-    //     };
-    // }
-
-    const { innerWidth: width, innerHeight: height } = window;
     return {
-        width,
-        height,
+        width: window.innerWidth,
+        height: window.innerHeight,
     };
 }
 
 export function useWindowDimensions(): WindowDimensions {
-    const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>(getWindowDimensions());
+    const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>({
+        width: 0,
+        height: 0,
+    });
 
     useEffect(() => {
         function handleResize() {
             setWindowDimensions(getWindowDimensions());
         }
 
-        window.addEventListener('resize', handleResize);
+        handleResize();
 
+        window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 

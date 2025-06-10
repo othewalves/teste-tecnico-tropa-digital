@@ -49,10 +49,10 @@
       }
     }
     .celStatus {
+      gap: 9px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap: 9px;
     }
 
     .celDate {
@@ -61,10 +61,10 @@
     }
 
     .flexRow {
+      gap: 0.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
 
       position: relative;
     }
@@ -83,9 +83,9 @@
   }
 
   .pagination {
+    gap: 0.5rem;
     display: flex;
     justify-content: flex-end;
-    gap: 0.5rem;
     margin-top: 1.5rem;
 
     @include tablet {

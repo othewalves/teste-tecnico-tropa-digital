@@ -6,6 +6,7 @@
   width: 18.75rem;
   border-radius: 6.25rem;
   padding: 0.625rem 1.563rem;
+  gap: 7px;
 
   color: $white_500;
   font-weight: 500;
@@ -15,7 +16,6 @@
   background-color: $primary_500;
 
   @include center;
-  gap: 7px;
 
   @include mobile {
     width: 100%;
