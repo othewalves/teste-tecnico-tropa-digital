@@ -2,11 +2,6 @@
 @use "@/app/styles/_variables.scss" as *;
 
 .container {
-  // @include tablet {
-  //   display: none;
-  //   background-color: $primary_500;
-  // }
-
   width: 210px;
   height: 100vh;
   padding: 30px 0;

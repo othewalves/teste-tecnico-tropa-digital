@@ -1,3 +1,5 @@
+@use "@/app/styles/_variables.scss" as *;
+
 @mixin center {
   display: flex;
   justify-content: center;
@@ -30,4 +32,8 @@
 
 @mixin floating {
   animation: float 3s ease-in-out infinite;
+}
+
+@mixin link {
+  color: $blue_300;
 }
