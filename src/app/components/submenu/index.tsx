@@ -12,7 +12,7 @@ const Submenu = () => {
                 <Image width={16} height={16} src={'/Pencil.svg'} alt='Editar' />
                 Editar
             </button>
-            <button className={`${style.button}${style.buttonTrash}`}>
+            <button className={`${style.button} ${style.buttonTrash}`}>
                 <Image width={16} height={16} src={'/Trash.svg'} alt='Remover' />
                 Remover
             </button>

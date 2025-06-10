@@ -29,7 +29,7 @@ const Input = ({
     }
 
     return (
-        <div className={`${styles.container}${width ? styles[width] : ''}`}>
+        <div className={`${styles.container} ${width ? styles[width] : ''}`}>
             {
                 label &&
                 <label className={styles.label}>{label}</label>
