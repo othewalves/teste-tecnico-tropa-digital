@@ -19,34 +19,36 @@ const EVENTS = [
 ]
 const Table = () => {
     return (
-        <table className={styles.table}>
-            <thead>
-                <tr>
-                    <td>Nome do evento</td>
-                    <td>Total de equipes</td>
-                    <td>Status</td>
-                    <td>Data</td>
-                </tr>
-            </thead>
-            <tbody>
-                {EVENTS.map((item) => (
-                    <tr key={item.id}>
-                        <td>{item.name}</td>
-                        <td>{item.totalStaff}</td>
-                        <td className={styles.celStatus}><div className={styles.status} />{item.status}</td>
-                        <td>
-                            <div className={styles.flexRow}>
-                                <span>{item.date}</span>
-                                <button>
-                                    <Image src={'/setting.svg'} alt='Configurações' width={4} height={10} />
-                                </button>
-                            </div>
-                        </td>
+        <div className={styles.tableWrapper}>
+            <table className={styles.table}>
+                <thead>
+                    <tr>
+                        <td>Nome do evento</td>
+                        <td>Total de equipes</td>
+                        <td>Status</td>
+                        <td>Data</td>
                     </tr>
-                ))
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {EVENTS.map((item) => (
+                        <tr key={item.id}>
+                            <td>{item.name}</td>
+                            <td>{item.totalStaff}</td>
+                            <td className={styles.celStatus}><div className={styles.status} />{item.status}</td>
+                            <td>
+                                <div className={styles.flexRow}>
+                                    <span>{item.date}</span>
+                                    <button>
+                                        <Image src={'/setting.svg'} alt='Configurações' width={4} height={10} />
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    ))
+                    }
+                </tbody>
+            </table>
+        </div>
     );
 }
 
