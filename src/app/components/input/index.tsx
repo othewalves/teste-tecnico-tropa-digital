@@ -5,17 +5,20 @@ import EyeOpen from '../../../../public/eye-on.svg'
 import EyeOff from '../../../../public/eye-off.svg'
 import Image from "next/image";
 // import clsx from "clsx";
+import { ReactNode } from 'react';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     error?: string;
     width?: 'small' | 'medium' | 'large';
+    icon?: ReactNode
 }
 
 const Input = ({
     label,
     error,
     width,
+    icon,
     ...rest
 }: IInputProps) => {
 
@@ -27,8 +30,12 @@ const Input = ({
 
     return (
         <div className={`${styles.container} ${styles[width]}`}>
-            <label className={styles.label}>{label}</label>
+            {
+                label &&
+                <label className={styles.label}>{label}</label>
+            }
             <div className={styles.inputContainer}>
+                {icon && icon}
                 <input
                     {...rest}
                     className={styles.input}

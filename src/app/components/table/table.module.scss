@@ -81,6 +81,11 @@
     gap: 0.5rem;
     margin-top: 1.5rem;
 
+    @include tablet {
+      justify-content: center;
+      padding-bottom: 1.5rem;
+    }
+
     button {
       min-width: 35px;
       min-height: 35px;

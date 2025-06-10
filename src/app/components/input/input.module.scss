@@ -25,11 +25,15 @@
     position: relative;
     background-color: $white_600;
     border-radius: 6.25rem;
+
+    @include center;
+    padding-left: 0.625rem;
+
     .input {
       width: 100%;
       height: 100%;
       border-radius: 6.25rem;
-      padding: 0.625rem 1.25rem;
+      padding: 0.625rem;
 
       font-size: 0.813rem;
       font-weight: 400;
@@ -58,11 +62,11 @@
   }
 
   .small {
-    max-width: 200px;
+    max-width: 150px;
   }
 
   .medium {
-    max-width: 203px;
+    max-width: 200px;
   }
 
   .large {
