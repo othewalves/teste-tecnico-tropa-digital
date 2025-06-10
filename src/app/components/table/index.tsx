@@ -1,10 +1,19 @@
+
 'use client';
 
 import Image from 'next/image';
 import styles from './table.module.scss';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
-const EVENTS = [
+interface Event {
+    id: string;
+    name: string;
+    totalStaff: number;
+    status: string;
+    date: string;
+}
+
+const EVENTS: Event[] = [
     {
         id: '1',
         name: 'Clube do Laço Coração Pantaneiro',
@@ -49,14 +58,30 @@ const EVENTS = [
     },
 ];
 
+interface TableProps {
+    searchTerm: string;
+}
+
 const ITEMS_PER_PAGE = 2;
-const TOTAL_PAGES = Math.ceil(EVENTS.length / ITEMS_PER_PAGE);
 
-const Table = () => {
-
+const Table = ({ searchTerm }: TableProps) => {
     const [currentPage, setCurrentPage] = useState(1);
 
-    const paginatedData = EVENTS.slice(
+    const filteredEvents = useMemo(() => {
+        if (!searchTerm) {
+            return EVENTS;
+        }
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
+        return EVENTS.filter(event =>
+            event.name.toLowerCase().includes(lowerCaseSearchTerm) ||
+            event.status.toLowerCase().includes(lowerCaseSearchTerm) ||
+            event.date.toLowerCase().includes(lowerCaseSearchTerm)
+        );
+    }, [searchTerm]);
+
+    const TOTAL_PAGES = Math.ceil(filteredEvents.length / ITEMS_PER_PAGE);
+
+    const paginatedData = filteredEvents.slice(
         (currentPage - 1) * ITEMS_PER_PAGE,
         currentPage * ITEMS_PER_PAGE
     );
@@ -66,6 +91,11 @@ const Table = () => {
             setCurrentPage(page);
         }
     };
+
+    useState(() => {
+        setCurrentPage(1);
+    }, [searchTerm]);
+
 
     return (
         <div className={styles.tableWrapper}>
@@ -79,51 +109,58 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {paginatedData.map((item) => (
-                        <tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>{item.totalStaff}</td>
-                            <td className={styles.celStatus}><div className={`${styles.status} ${item.status === 'Ativo' ? styles.success : styles.error}`} />{item.status}</td>
-                            <td>
-                                <div className={styles.flexRow}>
-                                    <span>{item.date}</span>
-                                    <button className={styles.button}>
-                                        <Image src={'/setting.svg'} alt='Configurações' width={4} height={10} />
-                                    </button>
-                                </div>
-                            </td>
+                    {paginatedData.length > 0 ? (
+                        paginatedData.map((item) => (
+                            <tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>{item.totalStaff}</td>
+                                <td className={styles.celStatus}><div className={`${styles.status} ${item.status === 'Ativo' ? styles.success : styles.error}`} />{item.status}</td>
+                                <td>
+                                    <div className={styles.flexRow}>
+                                        <span>{item.date}</span>
+                                        <button className={styles.button}>
+                                            <Image src={'/setting.svg'} alt='Configurações' width={4} height={10} />
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={4} style={{ textAlign: 'center', padding: '20px' }}>Nenhum evento encontrado.</td>
                         </tr>
-                    ))
-                    }
+                    )}
                 </tbody>
             </table>
-            <div className={styles.pagination}>
-                <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className={currentPage !== 1 ? styles.active : styles.disabled}
-                >
-                    Anterior
-                </button>
-
-                {[1, 2, 3].map((page) => (
+            {TOTAL_PAGES > 0 && (
+                <div className={styles.pagination}>
                     <button
-                        key={page}
-                        onClick={() => handlePageChange(page)}
-                        className={currentPage === page ? styles.activePage : ''}
+                        onClick={() => handlePageChange(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        className={currentPage !== 1 ? styles.active : styles.disabled}
                     >
-                        {page}
+                        Anterior
                     </button>
-                ))}
 
-                <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === TOTAL_PAGES}
-                    className={currentPage !== TOTAL_PAGES ? styles.active : styles.disabled}
-                >
-                    Próxima
-                </button>
-            </div>
+                    {Array.from({ length: TOTAL_PAGES }, (_, i) => i + 1).map((page) => (
+                        <button
+                            key={page}
+                            onClick={() => handlePageChange(page)}
+                            className={currentPage === page ? styles.activePage : ''}
+                        >
+                            {page}
+                        </button>
+                    ))}
+
+                    <button
+                        onClick={() => handlePageChange(currentPage + 1)}
+                        disabled={currentPage === TOTAL_PAGES}
+                        className={currentPage !== TOTAL_PAGES ? styles.active : styles.disabled}
+                    >
+                        Próxima
+                    </button>
+                </div>
+            )}
         </div >
     );
 }
