@@ -17,7 +17,7 @@ export interface IUserContext {
 
 const defaultUser: IUser = {
     email: '',
-    password: ''
+    password: '',
 };
 
 export const UserContext = createContext<IUserContext>({
@@ -38,7 +38,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
     const logout = () => {
         Cookies.remove('tropa-digital-token');
-        navigate.push('/login');
+        navigate.replace('/login');
     }
 
     return (

@@ -83,7 +83,7 @@ const Table = () => {
                         <tr key={item.id}>
                             <td>{item.name}</td>
                             <td>{item.totalStaff}</td>
-                            <td className={styles.celStatus}><div className={styles.status} />{item.status}</td>
+                            <td className={styles.celStatus}><div className={`${styles.status} ${item.status === 'Ativo' ? styles.success : styles.error}`} />{item.status}</td>
                             <td>
                                 <div className={styles.flexRow}>
                                     <span>{item.date}</span>

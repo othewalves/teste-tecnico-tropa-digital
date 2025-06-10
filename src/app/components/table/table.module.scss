@@ -71,7 +71,12 @@
       width: 9px;
       height: 9px;
       border-radius: 100%;
+    }
+    .success {
       background-color: $success_500;
+    }
+    .error {
+      background-color: $error_500;
     }
   }
 

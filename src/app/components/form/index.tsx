@@ -32,8 +32,8 @@ const Form = () => {
     });
 
 
-    const handleLogin = (form: loginForm) => {
-        login(form);
+    const handleLogin = async (form: loginForm) => {
+        await login(form);
 
     }
 
