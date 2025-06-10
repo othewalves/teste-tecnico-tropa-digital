@@ -2,7 +2,7 @@
 @use "@/app/styles/_variables.scss" as *;
 
 .container {
-  width: 18.75rem;
+  // width: 18.75rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -18,24 +18,24 @@
     font-size: 0.813rem;
     color: $primary_500;
   }
+
   .inputContainer {
     width: 100%;
     height: 2.5rem;
     position: relative;
     background-color: $white_600;
     border-radius: 6.25rem;
-  }
+    .input {
+      width: 100%;
+      height: 100%;
+      border-radius: 6.25rem;
+      padding: 0.625rem 1.25rem;
 
-  .input {
-    width: 100%;
-    height: 100%;
-    border-radius: 6.25rem;
-    padding: 0.625rem 1.25rem;
-
-    font-size: 0.813rem;
-    font-weight: 400;
-    color: $blue_300;
-    background-color: $white_600;
+      font-size: 0.813rem;
+      font-weight: 400;
+      color: $blue_300;
+      background-color: $white_600;
+    }
   }
 
   .iconWrapper {
@@ -55,5 +55,17 @@
   .error {
     font-size: 0.813rem;
     color: $error_500;
+  }
+
+  .small {
+    max-width: 200px;
+  }
+
+  .medium {
+    max-width: 203px;
+  }
+
+  .large {
+    max-width: 100%;
   }
 }

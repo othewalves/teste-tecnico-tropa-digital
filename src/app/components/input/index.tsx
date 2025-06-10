@@ -4,15 +4,18 @@ import styles from './input.module.scss';
 import EyeOpen from '../../../../public/eye-on.svg'
 import EyeOff from '../../../../public/eye-off.svg'
 import Image from "next/image";
+// import clsx from "clsx";
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     error?: string;
+    width?: 'small' | 'medium' | 'large';
 }
 
 const Input = ({
     label,
     error,
+    width,
     ...rest
 }: IInputProps) => {
 
@@ -23,7 +26,7 @@ const Input = ({
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles[width]}`}>
             <label className={styles.label}>{label}</label>
             <div className={styles.inputContainer}>
                 <input
