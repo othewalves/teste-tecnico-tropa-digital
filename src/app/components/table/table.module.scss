@@ -42,7 +42,7 @@
     }
     td,
     th {
-      height: 38px;
+      height: 50px;
       @include tablet {
         height: 66px;
         text-overflow: ellipsis;
@@ -96,8 +96,8 @@
     }
 
     button {
-      width: 35px;
-      height: 35px;
+      min-width: 35px;
+      min-height: 35px;
       padding: 0.625rem 1rem;
       border-radius: 100rem;
       font-size: 0.875rem;
