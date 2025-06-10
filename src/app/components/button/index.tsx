@@ -9,7 +9,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 const Button = ({ children, isLoading, width, ...rest }: IButtonProps) => {
     return (
-        <button disabled={isLoading} {...rest} className={`${styles.container} ${styles[width]}`} >
+        <button disabled={isLoading} {...rest} className={`${styles.container} ${width ? styles[width] : ''}`} >
             {children}
         </button>
     );
