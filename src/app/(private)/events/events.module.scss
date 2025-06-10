@@ -1,0 +1,46 @@
+@use "@/app/styles/_mixins.scss" as *;
+@use "@/app/styles/_variables.scss" as *;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  padding: 30px;
+  background-color: $white_700;
+
+  .label {
+    font-weight: 400;
+    font-size: 16px;
+    color: $black_400;
+    span {
+      font-weight: 500;
+      font-size: 16px;
+      color: $neutro_500;
+    }
+  }
+  .title {
+    font-weight: 700;
+    font-size: 20px;
+    color: $primary_500;
+    margin: 13px 0 30px;
+  }
+
+  .tableContainer {
+    width: 100%;
+    background-color: $white_400;
+
+    gap: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    border-width: 1px;
+
+    .cardActions {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      gap: 10px;
+    }
+  }
+}

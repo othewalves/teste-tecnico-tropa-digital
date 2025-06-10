@@ -6,7 +6,7 @@ import EyeOff from '../../../../public/eye-off.svg'
 import Image from "next/image";
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
-    label: string;
+    label?: string;
     error?: string;
 }
 

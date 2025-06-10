@@ -14,6 +14,9 @@
   cursor: pointer;
   background-color: $primary_500;
 
+  @include center;
+  gap: 7px;
+
   @include mobile {
     width: 100%;
   }
