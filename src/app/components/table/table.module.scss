@@ -105,6 +105,7 @@
       background-color: $white_700;
 
       @include tablet {
+        padding: 0.375rem 0.625rem;
         font-size: 0.625rem;
       }
 
