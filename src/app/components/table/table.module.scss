@@ -104,6 +104,10 @@
       cursor: pointer;
       background-color: $white_700;
 
+      @include tablet {
+        font-size: 0.625rem;
+      }
+
       &.active {
         background-color: $primary_500;
         color: white;
