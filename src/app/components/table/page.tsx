@@ -19,7 +19,7 @@ const EVENTS = [
 ]
 const Table = () => {
     return (
-        <table>
+        <table className={styles.table}>
             <thead>
                 <tr>
                     <td>Nome do evento</td>
