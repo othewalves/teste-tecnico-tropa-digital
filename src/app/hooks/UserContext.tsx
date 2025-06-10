@@ -33,12 +33,12 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     const login = (user: IUser) => {
         setUser(user);
         Cookies.set('tropa-digital-token', JSON.stringify(user))
-        navigate.push('/dashboard');
+        navigate.push('/events');
     }
 
     const logout = () => {
         Cookies.remove('tropa-digital-token');
-        navigate.push('/dashboard');
+        navigate.push('/login');
     }
 
     return (
