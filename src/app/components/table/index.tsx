@@ -24,38 +24,52 @@ const EVENTS: Event[] = [
     },
     {
         id: '2',
-        name: 'Evento B',
+        name: 'Palestra - Inovação em Foco: Conectando Ideias, Construindo o Futuro',
         totalStaff: 8,
         status: 'Inativo',
         date: '12 a 14 de Julho'
     },
     {
         id: '3',
-        name: 'Evento C',
+        name: 'Festa do Peão Laço de Ouro: Celebrando a Cultura do Pantanal',
         totalStaff: 6,
         status: 'Ativo',
         date: '20 a 22 de Agosto'
     },
     {
         id: '4',
-        name: 'Evento D',
+        name: 'Impacto e Transformação: Moldando o Amanhã, Hoje',
         totalStaff: 5,
         status: 'Ativo',
         date: '10 a 12 de Setembro'
     },
     {
         id: '5',
-        name: 'Evento E',
+        name: 'Noite Pantaneira do Laço: Uma Homenagem às Raízes do Clube',
         totalStaff: 12,
         status: 'Inativo',
         date: '05 a 07 de Outubro'
     },
     {
         id: '6',
-        name: 'Evento F',
+        name: 'Feira Gastronômica Sabor do Mundo: Uma Viagem Culinária Sem Fronteiras',
         totalStaff: 7,
         status: 'Ativo',
         date: '15 a 17 de Novembro'
+    },
+    {
+        id: '7',
+        name: 'Maratona Tech Startups: Impulsionando Ideias, Conectando Talentos',
+        totalStaff: 9,
+        status: 'Ativo',
+        date: '15 a 17 de Novembro'
+    },
+    {
+        id: '8',
+        name: 'Encontro de Bem-Estar e Saúde Integral: Equilíbrio para o Corpo e a Mente',
+        totalStaff: 7,
+        status: 'Inativo',
+        date: '05 a 07 de Outubro'
     },
 ];
 
